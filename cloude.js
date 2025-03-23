@@ -8,13 +8,13 @@ async function handleRequest(request) {
 
   let targetPath = "/"; // default
 
-  if (hostname === "domain1.com") {
-    targetPath = "/landing1";
-  } else if (hostname === "domain2.com") {
-    targetPath = "/landing2";
+  if (hostname === "tybird.de") {
+    targetPath = "/start1";
+  } else if (hostname === "tybird.eu") {
+    targetPath = "/start2";
   }
 
-  const targetUrl = `https://yourproject.webflow.io${targetPath}`;
+  const targetUrl = `https://multidomainwebflow.webflow.io/${targetPath}`;
   const modifiedRequest = new Request(targetUrl, request);
 
   const response = await fetch(modifiedRequest);
